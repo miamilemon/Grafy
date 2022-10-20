@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Grafy</string>
+    <string name="j">j</string>
+    <string name="i">i</string>
+    <string name="wartosc">Wartość</string>
+    <string name="zmien">ZMIEŃ</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="zakres">Liczby od 0 do 9</string>
+</resources>
