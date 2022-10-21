@@ -9,40 +9,49 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:text="@string/i"/>
+                android:text="@string/i"
+                android:gravity="center"
+                android:textSize="24dp"/>
             <EditText
                 android:id="@+id/edit_i"
                 android:inputType="number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/zakres"/>
+                android:hint="@string/zakres" />
             <Button
                 android:id="@+id/button_i_plus"
                 android:text="@string/plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/cardview_dark_background"/>
             <Button
                 android:id="@+id/button_i_minus"
                 android:text="@string/minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardview_dark_background"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:text="@string/j"/>
+                android:text="@string/j"
+                android:gravity="center"
+                android:textSize="24dp"/>
             <EditText
                 android:id="@+id/edit_j"
                 android:inputType="number"
@@ -52,22 +61,43 @@
             <Button
                 android:id="@+id/button_j_plus"
                 android:text="@string/plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/cardview_dark_background"/>
             <Button
                 android:id="@+id/button_j_minus"
                 android:text="@string/minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/cardview_dark_background"/>
         </LinearLayout>
-        <TextView
-            android:id="@+id/text_wynik"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/button_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/text_wynik"
+                android:hint="@string/textedithint"
+                android:inputType="number"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/button_wartosc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/wartosc"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/cardview_shadow_end_color"/>
+            <Button
+                android:id="@+id/button_zmien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/zmien"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/cardview_shadow_end_color"/>
+        </LinearLayout>
 
     </LinearLayout>
 

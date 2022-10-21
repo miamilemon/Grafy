@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         var buttonIMinus : Button = findViewById(R.id.button_i_minus)
         var buttonJPlus : Button = findViewById(R.id.button_j_plus)
         var buttonJMinus : Button = findViewById(R.id.button_j_minus)
-        var button1 : Button = findViewById(R.id.button_1)
-        var wynik : TextView = findViewById(R.id.text_wynik)
+        var button1 : Button = findViewById(R.id.button_wartosc)
+        var wynik : EditText = findViewById(R.id.text_wynik)
 
         var tablica = arrayOf<Array<Int>>(
             arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         )
         button1.setOnClickListener {
             var jeden = tablica[editI.text.toString().toInt()]
-            wynik.text = jeden[editJ.text.toString().toInt()].toString()
+            wynik.setText(jeden[editJ.text.toString().toInt()].toString())
         }
 
         buttonIPlus.setOnClickListener {
