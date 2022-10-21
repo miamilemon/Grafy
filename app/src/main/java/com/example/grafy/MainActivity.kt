@@ -21,16 +21,16 @@ class MainActivity : AppCompatActivity() {
         var wynik : EditText = findViewById(R.id.text_wynik)
 
         var tablica = arrayOf<Array<Int>>(
-            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-            arrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-            arrayOf(0, 2, 4, 6, 8, 10, 12, 14, 16, 18),
-            arrayOf(0, 3, 6, 9, 12, 15, 18, 21, 24, 27),
-            arrayOf(0, 4, 8, 12, 16, 20, 24, 28, 32, 35),
-            arrayOf(0, 5, 10, 15, 20, 25, 30, 35, 40, 45),
-            arrayOf(0, 6, 12, 18, 24, 30, 36, 42, 48, 54),
-            arrayOf(0, 7, 14, 21, 28, 35, 42, 49, 56, 63),
-            arrayOf(0, 8, 16, 24, 32, 40, 48, 56, 64, 72),
-            arrayOf(0, 9, 18, 27, 36, 45, 54, 63, 72, 81)
+            arrayOf(0, 0, 0, 1, 1, 0, 0, 1, 0, 0),
+            arrayOf(0, 1, 0, 0, 0, 0, 1, 0, 1, 1),
+            arrayOf(0, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+            arrayOf(0, 1, 0, 1, 0, 0, 0, 1, 0, 0),
+            arrayOf(0, 1, 0, 1, 1, 0, 1, 0, 1, 1),
+            arrayOf(1, 0, 1, 0, 1, 0, 0, 0, 0, 1),
+            arrayOf(0, 0, 0, 0, 1, 0, 1, 0, 1, 1),
+            arrayOf(1, 0, 1, 0, 1, 0, 0, 1, 0, 1),
+            arrayOf(0, 1, 1, 1, 1, 0, 0, 0, 0, 1),
+            arrayOf(0, 0, 0, 1, 1, 1, 0, 1, 0, 0)
         )
         buttonWartosc.setOnClickListener {
             var jeden = tablica[editI.text.toString().toInt()]
