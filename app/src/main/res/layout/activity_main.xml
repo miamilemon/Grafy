@@ -16,11 +16,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/i"
                 android:gravity="center"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
             <EditText
                 android:id="@+id/edit_i"
                 android:inputType="number"
@@ -47,11 +47,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/j"
                 android:gravity="center"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
             <EditText
                 android:id="@+id/edit_j"
                 android:inputType="number"
@@ -98,7 +98,17 @@
                 android:layout_marginLeft="10dp"
                 android:backgroundTint="@color/cardview_shadow_end_color"/>
         </LinearLayout>
-
+        <Button
+            android:id="@+id/button_sciezka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/sciezka"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/cardview_shadow_end_color"/>
+        <TextView
+            android:text="Tu wyświetli się trasa od wierzchołka 1 do 2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

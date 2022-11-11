@@ -19,18 +19,14 @@ class MainActivity : AppCompatActivity() {
         var buttonWartosc : Button = findViewById(R.id.button_wartosc)
         var buttonZmiana : Button = findViewById(R.id.button_zmien)
         var wynik : EditText = findViewById(R.id.text_wynik)
-
+        //graf 5 elementowy z połączeniami bezkierunkowymi (obustronnymi)
+        //0 oznacza brak połączenia, a każda liczba odjąć 1 wagę połączenia
         var tablica = arrayOf<Array<Int>>(
-            arrayOf(0, 0, 0, 1, 1, 0, 0, 1, 0, 0),
-            arrayOf(0, 1, 0, 0, 0, 0, 1, 0, 1, 1),
-            arrayOf(0, 0, 0, 0, 0, 1, 0, 0, 0, 0),
-            arrayOf(0, 1, 0, 1, 0, 0, 0, 1, 0, 0),
-            arrayOf(0, 1, 0, 1, 1, 0, 1, 0, 1, 1),
-            arrayOf(1, 0, 1, 0, 1, 0, 0, 0, 0, 1),
-            arrayOf(0, 0, 0, 0, 1, 0, 1, 0, 1, 1),
-            arrayOf(1, 0, 1, 0, 1, 0, 0, 1, 0, 1),
-            arrayOf(0, 1, 1, 1, 1, 0, 0, 0, 0, 1),
-            arrayOf(0, 0, 0, 1, 1, 1, 0, 1, 0, 0)
+            arrayOf(0, 6, 4, 2, 0),
+            arrayOf(6, 0, 0, 0, 8),
+            arrayOf(4, 0, 0, 3, 0),
+            arrayOf(2, 0, 3, 0, 5),
+            arrayOf(0, 8, 0, 5, 0)
         )
         buttonWartosc.setOnClickListener {
             var jeden = tablica[editI.text.toString().toInt()]
