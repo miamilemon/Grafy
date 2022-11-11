@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             if(editI.text.isNullOrBlank()){
                 editI.setText("0")
             }else{
-                if(editI.text.toString().equals("9")){
+                if(editI.text.toString().equals("4")){
 
                 }else{
                     var zmienna = editI.text.toString().toInt()
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             if(editJ.text.isNullOrBlank()){
                 editJ.setText("0")
             }else{
-                if(editJ.text.toString().equals("9")){
+                if(editJ.text.toString().equals("4")){
 
                 }else{
                     var zmienna = editJ.text.toString().toInt()
