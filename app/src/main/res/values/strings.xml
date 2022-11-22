@@ -6,7 +6,7 @@
     <string name="zmien">ZMIEŃ</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="zakres">Liczby od 0 do 4</string>
+    <string name="zakres">Liczby od 0 do 5</string>
     <string name="sciezka">Wyznacz ścieżkę</string>
     <string name="textedithint">Tu będzie wartość</string>
 </resources>
