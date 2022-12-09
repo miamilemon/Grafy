@@ -18,73 +18,13 @@ class MainActivity : AppCompatActivity() {
         val buttonIMinus : Button = findViewById(R.id.button_i_minus)
         val buttonJPlus : Button = findViewById(R.id.button_j_plus)
         val buttonJMinus : Button = findViewById(R.id.button_j_minus)
-        val buttonWartosc : Button = findViewById(R.id.button_wartosc)
+        //val buttonWartosc : Button = findViewById(R.id.button_wartosc)
         val buttonZmiana : Button = findViewById(R.id.button_zmien)
         val wynik : EditText = findViewById(R.id.text_wynik)
         val oblicz : Button = findViewById(R.id.button_sciezka)
         val sciezka : TextView = findViewById(R.id.text_sciezka)
 
-        /*buttonWartosc.setOnClickListener {
-            var jeden = GRAPH[editI.text.toString().toInt()]
-            wynik.setText(jeden[editJ.text.toString().toInt()].toString())
-        }
-
-        buttonZmiana.setOnClickListener {
-            var jeden = GRAPH[editI.text.toString().toInt()]
-            jeden[editJ.text.toString().toInt()] = wynik.text.toString().toInt()
-        }*/
-
-        buttonIPlus.setOnClickListener {
-            if(editI.text.isNullOrBlank()){
-                editI.setText("0")
-            }else{
-                if(editI.text.toString().equals("5")){
-
-                }else{
-                    var zmienna = editI.text.toString().toInt()
-                    editI.setText((zmienna+1).toString())
-                }
-            }
-        }
-        buttonIMinus.setOnClickListener {
-            if(editI.text.isNullOrBlank()){
-                editI.setText("0")
-            }else{
-                if(editI.text.toString().equals("0")){
-
-                }else{
-                    var zmienna = editI.text.toString().toInt()
-                    editI.setText((zmienna-1).toString())
-                }
-            }
-        }
-        buttonJPlus.setOnClickListener {
-            if(editJ.text.isNullOrBlank()){
-                editJ.setText("0")
-            }else{
-                if(editJ.text.toString().equals("5")){
-
-                }else{
-                    var zmienna = editJ.text.toString().toInt()
-                    editJ.setText((zmienna+1).toString())
-                }
-            }
-        }
-        buttonJMinus.setOnClickListener {
-            if(editJ.text.isNullOrBlank()){
-                editJ.setText("0")
-            }else{
-                if(editJ.text.toString().equals("0")){
-
-                }else{
-                    var zmienna = editJ.text.toString().toInt()
-                    editJ.setText((zmienna-1).toString())
-                }
-            }
-        }
-
-
-        class Edge(val v1: String, val v2: String, val dist: Int)
+        class Edge(val v1: String, val v2: String, var dist: Int)
 
         /** One vertex of the graph, complete with mappings to neighbouring vertices */
         class Vertex(val name: String) : Comparable<Vertex> {
@@ -98,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     sciezka.append(name)
                 }
                 else if (previous == null) {
-                    sciezka.append("$name(unreached)")
+                    sciezka.append("$name(nie można znaleźć drogi)")
                 }
                 else {
                     previous!!.printPath()
@@ -202,7 +142,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val GRAPH = listOf(
+        var GRAPH = listOf(
             Edge("0", "1", 7),
             Edge("0", "2", 9),
             Edge("0", "3", 14),
@@ -214,17 +154,119 @@ class MainActivity : AppCompatActivity() {
             Edge("4", "5", 9)
         )
 
+        fun sprawdzWartosc(){
+            var test2 = 0
+            var test: Any
+            wynik.setText("0")
+            for((index,value) in GRAPH.withIndex()){
+                test2 = 0
+                test = GRAPH[index]
+                if(test.v1.equals(editI.text.toString())){
+                    test2++
+                }
+                if(test.v2.equals(editJ.text.toString())){
+                    test2++
+                }
+                if(test2==2){
+                    wynik.setText(test.dist.toString())
+                    break
+                }
+            }
+            if(test2==0){
+                wynik.setText("0")
+            }
+        }
+
+        buttonIPlus.setOnClickListener {
+            if(editI.text.isNullOrBlank()){
+                editI.setText("0")
+            }else{
+                if(editI.text.toString().equals("5")){
+
+                }else{
+                    var zmienna = editI.text.toString().toInt()
+                    editI.setText((zmienna+1).toString())
+                }
+            }
+            sprawdzWartosc()
+        }
+        buttonIMinus.setOnClickListener {
+            if(editI.text.isNullOrBlank()){
+                editI.setText("0")
+            }else{
+                if(editI.text.toString().equals("0")){
+
+                }else{
+                    var zmienna = editI.text.toString().toInt()
+                    editI.setText((zmienna-1).toString())
+                }
+            }
+            sprawdzWartosc()
+        }
+        buttonJPlus.setOnClickListener {
+            if(editJ.text.isNullOrBlank()){
+                editJ.setText("0")
+            }else{
+                if(editJ.text.toString().equals("5")){
+
+                }else{
+                    var zmienna = editJ.text.toString().toInt()
+                    editJ.setText((zmienna+1).toString())
+                }
+            }
+            sprawdzWartosc()
+        }
+        buttonJMinus.setOnClickListener {
+            if(editJ.text.isNullOrBlank()){
+                editJ.setText("0")
+            }else{
+                if(editJ.text.toString().equals("0")){
+
+                }else{
+                    var zmienna = editJ.text.toString().toInt()
+                    editJ.setText((zmienna-1).toString())
+                }
+            }
+            sprawdzWartosc()
+        }
+
+        buttonZmiana.setOnClickListener {
+            var test2 = 0
+            var test3 = -1
+            var test: Any
+            for((index,value) in GRAPH.withIndex()) {
+                test2 = 0
+                test = GRAPH[index]
+                if ((test as Edge).v1.equals(editI.text.toString())) {
+                    test2++
+                }
+                if ((test as Edge).v2.equals(editJ.text.toString())) {
+                    test2++
+                }
+                if (test2 == 2) {
+                    if(wynik.getText().toString().toInt() == 0){
+                        GRAPH.drop(index)
+                    }else{
+                        GRAPH[index].dist = wynik.getText().toString().toInt()
+                    }
+                    break
+                }
+            }
+
+            GRAPH += Edge(editI.text.toString(),editJ.text.toString(),wynik.getText().toString().toInt())
+            sprawdzWartosc()
+        }
 
         oblicz.setOnClickListener {
             sciezka.setText("")
-            /*with (Graph(GRAPH, true)) {   // directed
-                dijkstra(editI.text.toString())
-                printPath(editJ.text.toString())
-            }*/
-            with (Graph(GRAPH, false)) {  //undirected
+            with (Graph(GRAPH, true)) {   // directed
                 dijkstra(editI.text.toString())
                 printPath(editJ.text.toString())
             }
+            /*with (Graph(GRAPH, false)) {  //undirected
+                dijkstra(editI.text.toString())
+                printPath(editJ.text.toString())
+            }*/
         }
 
     }

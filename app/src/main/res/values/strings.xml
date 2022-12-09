@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Grafy</string>
-    <string name="j">Wierzchołek 2</string>
-    <string name="i">Wierzchołek 1</string>
+    <string name="j">Punkt 2</string>
+    <string name="i">Punkt 1</string>
     <string name="wartosc">Wartość</string>
     <string name="zmien">ZMIEŃ</string>
     <string name="plus">+</string>
