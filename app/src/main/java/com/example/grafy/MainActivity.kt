@@ -6,6 +6,8 @@ import android.util.ArraySet
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.widget.doAfterTextChanged
+import androidx.core.widget.doOnTextChanged
 import java.util.TreeSet
 
 class MainActivity : AppCompatActivity() {
@@ -176,6 +178,10 @@ class MainActivity : AppCompatActivity() {
                 wynik.setText("0")
             }
         }
+
+        editI.doAfterTextChanged { sprawdzWartosc() }
+
+        editJ.doAfterTextChanged { sprawdzWartosc() }
 
         buttonIPlus.setOnClickListener {
             if(editI.text.isNullOrBlank()){
